@@ -1,6 +1,6 @@
 {
   "name": "Chromesome",
-  "version": "0.0.1",
+  "version": "1.0",
   "manifest_version": 2,
   "description": "This extension was created by Millan Philipose",
   "homepage_url": "http://github.com/millanp",
@@ -23,6 +23,7 @@
   },
   "permissions": [
     "tabs",
+    "downloads",
     "https://youtube.com/*"
   ],
   "content_scripts": [

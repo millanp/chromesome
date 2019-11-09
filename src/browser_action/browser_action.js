@@ -6,4 +6,10 @@ window.onload = () => {
             to: document.querySelector('#seek-to').value
         })
     } 
+    document.querySelector('#dl-btn').onclick = (e) => {
+        e.stopPropagation();
+        chrome.runtime.sendMessage({
+            action: "triggerDownload",
+        })
+    } 
 }

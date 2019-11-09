@@ -18,6 +18,18 @@ chrome.extension.onMessage.addListener(
           }, resp => {});
         });
         break;
+      case "triggerDownload":
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+          chrome.tabs.sendMessage(tabs[0].id, { 
+            action: "download",
+          }, resp => {
+            chrome.downloads.download({
+              url: resp.dataURL,
+              filename: resp.videoName + "__" + resp.coordinate + ".png"
+            });
+          });
+        });
+        break;
       default:
         break;
     }
